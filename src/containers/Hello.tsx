@@ -1,20 +1,17 @@
 import Hello from '../components/Hello';
-import * as actions from '../actions/';
-import { StoreState } from '../types/index';
-import { connect, Dispatch } from 'react-redux';
+import * as actions from '../redux/actions';
+import { IStoreState } from '../types/index';
+import { connect } from 'react-redux';
+import { Dispatch, bindActionCreators } from 'redux';
 
-export function mapStateToProps({ enthusiasmLevel, languageName }: StoreState) {
+export function mapStateToProps({ todo: { count } }: IStoreState) {
   return {
-    enthusiasmLevel,
-    name: languageName,
+    count,
   };
 }
 
-export function mapDispatchToProps(dispatch: Dispatch<actions.EnthusiasmAction>) {
-  return {
-    onIncrement: () => dispatch(actions.incrementEnthusiasm()),
-    onDecrement: () => dispatch(actions.decrementEnthusiasm()),
-  };
-}
+export const mapDispatchToProps = (dispatch: Dispatch) => bindActionCreators({
+  addIncrement: actions.addCount,
+}, dispatch) 
 
 export default connect(mapStateToProps, mapDispatchToProps)(Hello);

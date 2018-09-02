@@ -1,5 +1,4 @@
-
-export interface StoreState {
-    languageName: string;
-    enthusiasmLevel: number;
+import { CountersState } from '../redux/reducers/todo';
+export interface IStoreState {
+    todo: CountersState;
 }
