@@ -1,8 +1,8 @@
 import { createStore, applyMiddleware } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
-import { IStoreState } from "../../types/index";
+import { IStoreState } from "../storeType";
 
-import rootReducer from "../reducers";
+import rootReducer from "..";
 
 export default function configureStore() {
   const store = createStore<IStoreState, any, any, any>(

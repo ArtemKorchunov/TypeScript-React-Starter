@@ -1,17 +1,17 @@
 import * as React from "react";
-import "./Hello.css";
+import "./styles.css";
 
 export interface Props {
   count: number;
-  addIncrement: (arg: number) => void;
+  addCount: (arg: number) => void;
 }
 
-function Hello({ count, addIncrement }: Props) {
+function Hello({ count, addCount }: Props) {
   return (
     <div className="hello">
       <div className="greeting">Hello {count}</div>
       <div>
-        <button onClick={() => addIncrement(count + 1)}>+</button>
+        <button onClick={() => addCount(count + 1)}>+</button>
       </div>
     </div>
   );

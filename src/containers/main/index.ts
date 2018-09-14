@@ -1,8 +1,8 @@
-import Hello from "../../components/Hello";
-import * as actions from "../../redux/actions";
-import { IStoreState } from "../../types";
 import { connect } from "react-redux";
-import { Dispatch, bindActionCreators } from "redux";
+
+import Hello from "../../components/main";
+import { addCount } from "../../redux/todo/actions";
+import { IStoreState } from "../../redux/storeType";
 
 export function mapStateToProps({ todo: { count } }: IStoreState) {
   return {
@@ -10,15 +10,16 @@ export function mapStateToProps({ todo: { count } }: IStoreState) {
   };
 }
 
-export const mapDispatchToProps = (dispatch: Dispatch) =>
-  bindActionCreators(
-    {
-      addIncrement: actions.addCount
-    },
-    dispatch
-  );
+//Another way to dispatch
+// export const mapDispatchToProps = (dispatch: Dispatch) =>
+//   bindActionCreators(
+//     {
+//       addIncrement: actions.addCount
+//     },
+//     dispatch
+//   );
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  { addCount }
 )(Hello);
