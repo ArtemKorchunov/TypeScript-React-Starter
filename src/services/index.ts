@@ -3,13 +3,13 @@ export namespace localStorageApi {
     return localStorage[value];
   }
 
-  function setItem(prop: string, value: object) {
+  export function setItem(prop: string, value: object) {
     localStorage[prop] = value;
   }
-  function removeItem(prop: string) {
+  export function removeItem(prop: string) {
     localStorage.removeItem(prop);
   }
-  function clear() {
+  export function clear() {
     localStorage.clear();
   }
 }
