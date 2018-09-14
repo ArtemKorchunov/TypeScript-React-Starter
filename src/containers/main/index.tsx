@@ -1,8 +1,22 @@
+import * as React from "react";
 import { connect } from "react-redux";
 
-import Hello from "../../components/main";
-import { addCount } from "../../redux/todo/actions";
+import Component from "../../components/main";
 import { IStoreState } from "../../redux/storeType";
+
+//Actions
+import { addCount } from "../../redux/todo/actions";
+
+export interface Props {
+  count: number;
+  addCount: (arg: number) => void;
+}
+
+class Container extends React.Component<Props, object> {
+  render(): JSX.Element {
+    return <Component {...this.props} />;
+  }
+}
 
 export function mapStateToProps({ todo: { count } }: IStoreState) {
   return {
@@ -22,4 +36,4 @@ export function mapStateToProps({ todo: { count } }: IStoreState) {
 export default connect(
   mapStateToProps,
   { addCount }
-)(Hello);
+)(Container);

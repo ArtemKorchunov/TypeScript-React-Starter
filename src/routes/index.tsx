@@ -4,7 +4,6 @@ import { Router } from "react-router";
 import { Route, PrivateRoute } from "./helpers";
 //Services
 import history from "../services/history";
-import { localStorageApi } from "../services";
 //Components
 import { Main } from "../containers";
 //Routes

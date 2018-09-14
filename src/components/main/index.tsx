@@ -1,12 +1,9 @@
 import * as React from "react";
 import "./styles.css";
 
-export interface Props {
-  count: number;
-  addCount: (arg: number) => void;
-}
+import { Props } from "../../containers/main";
 
-function Hello({ count, addCount }: Props) {
+function Component({ count, addCount }: Props) {
   return (
     <div className="hello">
       <div className="greeting">Hello {count}</div>
@@ -17,4 +14,4 @@ function Hello({ count, addCount }: Props) {
   );
 }
 
-export default Hello;
+export default Component;
