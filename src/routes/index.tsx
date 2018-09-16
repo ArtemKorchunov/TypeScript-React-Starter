@@ -5,14 +5,15 @@ import { Route, PrivateRoute } from "./helpers";
 //Services
 import history from "../services/history";
 //Components
-import { Main } from "../containers";
+import { Main, Login } from "../containers";
 //Routes
 
 function Routes() {
   return (
     <Router history={history}>
       <Switch>
-        <Route path="/" component={Main} />
+        <Route exact path="/" component={Main} />
+        <Route path="/login" component={Login} />
       </Switch>
     </Router>
   );
