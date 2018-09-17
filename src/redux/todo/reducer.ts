@@ -1,5 +1,7 @@
 import * as counters from "./actions";
 import { ActionType } from "typesafe-actions";
+import produce from "immer";
+
 import { INCREMENT } from "./constants";
 
 export type CountersAction = ActionType<typeof counters>;
@@ -12,13 +14,10 @@ const initialState: CountersState = {
   count: 0
 };
 
-export default (state = initialState, action: CountersAction) => {
+export default produce((draft: CountersState, action: CountersAction) => {
   switch (action.type) {
     case INCREMENT:
-      return {
-        count: state.count + action.payload
-      };
-    default:
-      return state;
+      draft.count += action.payload;
+      break;
   }
-};
+}, initialState);
