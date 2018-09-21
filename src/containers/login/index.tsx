@@ -11,7 +11,11 @@ export interface Props {
   signUpRequest?: (arg: number) => void;
 }
 
-class Container extends React.PureComponent<Props, object> {
+class Container extends React.Component<Props, object> {
+  state= {}
+  componentDidMount() {
+    this.setState({})
+  }
   render(): JSX.Element {
     return <Component {...this.props} />;
   }

@@ -8,7 +8,11 @@ function Component({ count, addCount }: Props) {
     <div className="hello">
       <div className="greeting">Hello {count}</div>
       <div>
-        <button onClick={() => addCount(count + 1)}>+</button>
+
+
+
+        <button onClick={() => addCount(count    + 1 )
+        }>+</button>
       </div>
     </div>
   );
