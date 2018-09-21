@@ -6,7 +6,7 @@ import { Props } from "../../containers/main";
 function Component({ count, addCount }: Props) {
     return (
         <div className="hello">
-            <div className="greeting">Hello {count}</div>
+            <div className="greeting">Hello      {count}</div>
             <div>
 
 
@@ -14,7 +14,10 @@ function Component({ count, addCount }: Props) {
 
 
 
-                <button onClick={() => addCount(count + 1)
+                <button onClick={() => addCount(count +
+
+
+                    1)
                 }>+</button>
             </div>
         </div>
