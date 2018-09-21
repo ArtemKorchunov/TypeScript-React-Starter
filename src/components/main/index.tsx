@@ -12,8 +12,6 @@ function Component({ count, addCount }: Props) {
 
 
 
-
-
                 <button onClick={() => addCount(count +
 
 
